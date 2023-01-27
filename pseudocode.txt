@@ -1,5 +1,6 @@
 SSF Assessment:
-Make an online Pizza ordering app with Spring Boot, then store to Redis database.
+Make an online Pizza ordering app with Spring Boot,
+then store to Redis database.
 
 Task 1 (16 marks)
     Generate dependencies using Spring Initializr (Spring.io)
@@ -69,3 +70,5 @@ Task 4 (22 marks)
 Task 5 (4 marks)
     Deploy to Railway
     
+Note:
+Sorry I couldn't complete.

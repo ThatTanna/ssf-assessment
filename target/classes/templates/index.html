@@ -13,7 +13,13 @@
 			<h2>Panucci's Pizza</h2>
 		</div>
 
-		<form>
+		<form
+			action="#"
+			data-th-action="@{/delivery}"
+			data-th-object="${pizza}"
+			method="post"
+			enctype="application/x-www-form-urlencoded"
+		>
 			<div>
 				<h2>Select a pizza</h2>
 				<table>
@@ -23,7 +29,7 @@
 								<img src="/images/Bella.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="bella"> Bella
+								<input type="radio" name="pizza" value="bella" required> Bella
 							</div>
 						</td>
 						<td>
@@ -31,7 +37,7 @@
 								<img src="/images/Margherita.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="margherita"> Margherita
+								<input type="radio" name="pizza" value="margherita" required> Margherita
 							</div>
 						</td>
 						<td>
@@ -39,7 +45,7 @@
 								<img src="/images/Marinara.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="marinara"> Marinara
+								<input type="radio" name="pizza" value="marinara" required> Marinara
 							</div>
 						</td>
 						<td>
@@ -47,7 +53,7 @@
 								<img src="/images/SpianataCalabrese.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="spianatacalabrese"> Spianata Calabrese
+								<input type="radio" name="pizza" value="spianatacalabrese" required> Spianata Calabrese
 							</div>
 						</td>
 						<td>
@@ -55,14 +61,14 @@
 								<img src="/images/TrioFormaggio.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="trioformaggio"> Trio Formaggio
+								<input type="radio" name="pizza" value="trioformaggio" required> Trio Formaggio
 							</div>
 						</td>
 					</tr>
 					<tr>
 						<td>Size:</td>
 						<td>
-							<select name="size" >
+							<select name="size" required>
 								<option value="sm">Small</option>
 								<option value="md">Medium</option>
 								<option value="lg">Large</option>
@@ -72,7 +78,7 @@
 					<tr>
 						<td>Quantity:</td>
 						<td>
-							<input type="number" min="1" name="quantity"> 
+							<input type="number" min="1" name="quantity" required>
 						</td>
 					</tr>
 					<tr>
@@ -83,6 +89,7 @@
 					</tr>
 				</table>
 			</div>
+			
 		</form>
 		
 	</body>
