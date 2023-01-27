@@ -1,0 +1,71 @@
+SSF Assessment:
+Make an online Pizza ordering app with Spring Boot, then store to Redis database.
+
+Task 1 (16 marks)
+    Generate dependencies using Spring Initializr (Spring.io)
+        Spring Boot DevTools
+        Spring Web
+        Thymeleaf
+        Validation (Task 3)
+    Add Redis data and Jedis driver (Add inside pom.xml)
+        MVN Repository
+        Glass Fish (for JSON)
+    Download, unzip and place folder inside static folder
+        contains images of pizza, index.html and css
+    Create project on Railway (with Redis)
+        Configure to use Redis (application.properties)
+    Mvn spring-boot:run and open localhost:8080
+    Push to Github
+
+Task 2 (38 marks)
+    Press Next, HTTP Request sent to backend
+        @PostMapping ("/pizza")
+    Pizza Validation
+        One of the 5 types: bella, margherita, etc
+        Pizza Size: sm, md, lg
+        # of pizzas: 1 - 10
+    PizzaController
+        process above POST request
+        perform checks above
+        print error message if fails
+    PizzaController to work with index.html
+        @RequestMapping("/")
+
+Task 3 (78 marks)
+    Form/Data Validation
+        Name (min 3 chars)
+        Address (mandatory)
+        Phone (min 8 digits)
+        Rush (Priority? Default no)
+        Comments (optional)
+    Place order
+        @PostMapping("/pizza/order")
+        Create order page (order.html)
+    Generate Order ID
+        Random 8 char long order id.
+        User JDK UUID class to Generate
+    Calculate Order Cost
+        Small - 1x, Medium - 1.2x, Large - 1.5x
+        Rush order +$2
+    Persist the order
+        Redis on Railway
+            No hardcode password
+        Save order as JSON string in Redis
+    Generate Order Confirmation
+        Create View 2 (PostMapping)
+            order id
+            delivery Address
+            pizza cost excluding 'rush order' cost
+            Rush order cost if selected. Hide if 'rush order' not clicked
+            total cost including 'rush order'
+        order id as a link <a>
+        <order id> clickable -> ("/order/<order id>")
+
+Task 4 (22 marks)
+    REST controller to process request when order id is clicked
+        Retrieve order from Redis and return order as JSON with OK status
+        error message "message": "Order <order id> not found"
+
+Task 5 (4 marks)
+    Deploy to Railway
+    
